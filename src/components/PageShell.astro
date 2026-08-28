@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from './SiteHeader.astro';
+const { title, current, showHeader = true } = Astro.props;
+---
+
+<Layout title={title}>
+  {showHeader && <SiteHeader current={current} />}
+  <main transition:animate="slide">
+    <slot />
+  </main>
+  <footer class="site-footer section-shell"><a class="site-footer__brand" href="/" aria-label="HOI STUDS home"><img src="/logo-hoi.webp" alt="HOI STUDS" /></a><span class="mono">ELITE FRENCH BULLDOG GENETICS</span><a href="/contact">START A CONVERSATION ↗</a></footer>
+</Layout>

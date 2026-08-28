@@ -1,0 +1,24 @@
+---
+const { current = '' } = Astro.props;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/studs', label: 'Our Studs' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="site-header">
+  <a class="site-header__brand" href="/" transition:name="brand" aria-label="HOI STUDS home"><img src="/logo-hoi.webp" alt="HOI STUDS" /></a>
+  <nav class="site-header__nav" aria-label="Main navigation">
+    {links.map((link) => <a class={current === link.href ? 'is-current' : ''} href={link.href}>{link.label}</a>)}
+  </nav>
+  <div class="site-header__actions">
+    <a class="site-header__lock mono" href="/lock-in">LOCK-IN</a>
+    <a class="button button--primary button--small" href="/contact">BUY NOW</a>
+    <details class="mobile-menu">
+      <summary aria-label="Open navigation"><span></span><span></span></summary>
+      <nav aria-label="Mobile navigation">{links.map((link) => <a href={link.href}>{link.label}</a>)}<a href="/lock-in">Lock-In</a><a href="/contact">Buy Now</a></nav>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+const { title = 'HOI STUDS — Elite French Bulldog Genetics' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Elite French Bulldog genetics built for structure, color and the next generation." />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+    <script>
+      const reveal = () => {
+        const items = document.querySelectorAll('[data-reveal]');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        items.forEach((item) => observer.observe(item));
+      };
+      document.addEventListener('astro:page-load', reveal);
+      reveal();
+    </script>
+  </body>
+</html>

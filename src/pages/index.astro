@@ -1,0 +1,26 @@
+---
+import PageShell from '../components/PageShell.astro';
+import HeroCarousel from '../components/HeroCarousel';
+import { studs } from '../data/studs';
+---
+
+<PageShell title="HOI STUDS — Elite French Bulldog Genetics" current="/">
+  <HeroCarousel studs={studs} client:load />
+
+  <section class="statement section-shell" data-reveal>
+    <p class="section-kicker mono">THE HOI STANDARD</p>
+    <h1 class="display">NOT JUST A STUD.<br /><em>A GENETIC ADVANTAGE.</em></h1>
+    <p>Every breeding decision shapes the next generation.</p>
+    <div class="principles"><article><span class="mono">STRUCTURE</span><h2 class="display">Built to hold attention.</h2><p>Short backs. Strong bone. Wide chest. Distinctive heads.</p></article><article><span class="mono">GENETICS</span><h2 class="display">Rare, with intention.</h2><p>Pink. Isabella. New Shade. Fluffy. Big Rope.</p></article><article><span class="mono">VISION</span><h2 class="display">A bloodline with direction.</h2><p>Building the next generation of Exotic French Bulldogs.</p></article></div>
+  </section>
+
+  <section class="services section-shell" id="services" data-reveal>
+    <div class="section-heading"><p class="section-kicker mono">WHAT WE DO</p><h2 class="display">SERVICES</h2><a class="button button--text" href="/services">VIEW ALL ↗</a></div>
+    <div class="service-grid"><article><span class="mono">01 / SERVICE</span><h3 class="display">STUD SERVICE</h3><p>Elite genetics, available when your female is ready.</p><a href="/studs">EXPLORE ↗</a></article><article><span class="mono">02 / ACCESS</span><h3 class="display">LOCK-IN</h3><p>Secure your breeding opportunity today. Choose your stud when the time is right.</p><a href="/lock-in">RESERVE ↗</a></article><article><span class="mono">03 / GUIDANCE</span><h3 class="display">GENETIC CONSULTATION</h3><p>Not sure which stud is right for your female? Let us find the right match.</p><a href="/contact">BOOK A CALL ↗</a></article><article><span class="mono">04 / REACH</span><h3 class="display">SHIPPING</h3><p>National and international semen shipping.</p><a href="/contact">LEARN MORE ↗</a></article></div>
+  </section>
+
+  <section class="home-feature section-shell" data-reveal>
+    <div><p class="section-kicker mono">START WITH THE RIGHT GENETICS</p><h2 class="display">Your next litter<br /><em>starts here.</em></h2></div>
+    <a class="button button--outline" href="/studs">EXPLORE THE STUDS ↗</a>
+  </section>
+</PageShell>

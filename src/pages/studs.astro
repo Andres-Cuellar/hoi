@@ -1,0 +1,9 @@
+---
+import PageShell from '../components/PageShell.astro';
+import { studs } from '../data/studs';
+---
+
+<PageShell title="Our Studs — HOI STUDS" current="/studs">
+  <section class="page-hero page-hero--dark"><p class="section-kicker mono">THE COLLECTION</p><h1 class="display">MEET THE<br /><em>STUDS.</em></h1><p>Personalities, structure and genetics selected for breeders who are building beyond the ordinary.</p></section>
+  <section class="studs-editorial section-shell">{studs.map((stud, index) => <article class="stud-profile" id={stud.slug} data-reveal><div class="stud-profile__image"><img src={stud.image} alt={`${stud.name} French Bulldog`} /><span class="mono">0{index + 1} / HOI STUDS</span></div><div class="stud-profile__copy"><p class="section-kicker mono">{stud.tags.join(' / ')}</p><h2 class="display">{stud.name}</h2><h3 class="display">{stud.headline}</h3><p>{stud.description}</p><div class="stud-profile__tags mono">{stud.tags.map((tag) => <span>{tag}</span>)}</div><div class="stud-profile__actions"><span class="price">{stud.price}</span><a class="button button--primary" href="/contact">VIEW GENETICS</a><a class="button button--text" href="/contact">BUY NOW ↗</a></div><div class="stud-profile__specs"><details open><summary class="mono">PHENOTYPE & STRUCTURE</summary><p>{stud.phenotype}</p></details><details><summary class="mono">COLOR & COAT GENETICS</summary><p>{stud.colorCoat}</p></details><details><summary class="mono">HEALTH & STRUCTURE GENETICS</summary><p>{stud.health}</p></details></div></div></article>)}</section>
+</PageShell>
