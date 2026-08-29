@@ -1,9 +1,93 @@
 ---
 import PageShell from '../components/PageShell.astro';
+import { studs } from '../data/studs';
 ---
 
 <PageShell title="Services — HOI STUDS" current="/services">
   <section class="page-hero page-hero--blue"><p class="section-kicker mono">THE HOI PROGRAM</p><h1 class="display">GENETICS,<br /><em>WITH DIRECTION.</em></h1><p>Every service is designed to make the next breeding decision clearer, stronger and more intentional.</p></section>
+
+  <section class="how-it-works section-shell" data-reveal>
+    <p class="section-kicker mono">HOW IT WORKS</p>
+    <h2 class="display" style="font-size:clamp(2rem,3.5vw,3.5rem);letter-spacing:-.08em;margin:0 0 3rem;">Simple, stress-free breeding.</h2>
+    <div class="how-it-works__grid">
+      <div class="how-it-works__step"><div class="step-number">01</div><h3 class="display">Pick Your Stud & Secure Your Spot</h3><p>Send a deposit and complete our quick contract to book your preferred stud.</p></div>
+      <div class="how-it-works__step"><div class="step-number">02</div><h3 class="display">Time Your Breeding</h3><p>Have your female progesterone tested during her heat cycle — we'll help guide the timing.</p></div>
+      <div class="how-it-works__step"><div class="step-number">03</div><h3 class="display">Receive Your Sample</h3><p>We ship chilled or frozen semen to your vet, or provide insemination services if you're local.</p></div>
+      <div class="how-it-works__step"><div class="step-number">04</div><h3 class="display">We're Here For You</h3><p>Ongoing support through pregnancy, delivery, and puppy care — every step of the way.</p></div>
+    </div>
+  </section>
+
   <section class="services-page section-shell" data-reveal><div class="service-feature"><p class="section-kicker mono">01 / STUD SERVICE</p><h2 class="display">Elite genetics,<br />when your female is ready.</h2><p>Access carefully selected studs with structure, color and bloodlines built for the next generation.</p><a class="button button--primary" href="/studs">VIEW OUR STUDS</a></div><div class="service-stack"><article><span class="mono">02 / ACCESS</span><h3 class="display">LOCK-IN</h3><p>Secure your breeding opportunity today. Choose your stud when the time is right.</p><a href="/lock-in">RESERVE ↗</a></article><article><span class="mono">03 / GUIDANCE</span><h3 class="display">GENETIC CONSULTATION</h3><p>Tell us about your female and we will help you find the right match.</p><a href="/contact">BOOK A CALL ↗</a></article><article><span class="mono">04 / REACH</span><h3 class="display">SHIPPING</h3><p>National and international semen shipping, coordinated around your program.</p><a href="/contact">LEARN MORE ↗</a></article></div></section>
+
+  <section class="section-shell" data-reveal>
+    <p class="section-kicker mono">STUD FEES — COMPARE</p>
+    <h2 class="display" style="font-size:clamp(2rem,3.5vw,3.5rem);letter-spacing:-.08em;margin:0 0 3rem;">Choose the right stud.</h2>
+    <div class="stud-table-wrap">
+      <table class="stud-table">
+        <thead><tr><th>Stud</th><th>Color / Profile</th><th>Price</th><th>Shipping</th><th>Availability</th></tr></thead>
+        <tbody>{studs.map((s) => <tr><td>{s.name}</td><td>{s.tags.join(', ')}</td><td>{s.price}</td><td>Available</td><td>Limited</td></tr>)}</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section-shell" data-reveal>
+    <p class="section-kicker mono">HEALTH SCREENING</p>
+    <h2 class="display" style="font-size:clamp(2rem,3.5vw,3.5rem);letter-spacing:-.08em;margin:0 0 3rem;">Healthy Frenchies are our highest priority.</h2>
+    <div class="health-grid">
+      <article class="health-card"><h4>C3 (Cystinuria 3)</h4><p>Primarily impacts intact males. Associated with urinary tract stones. This clearance is added protection when planning to keep a male for breeding.</p></article>
+      <article class="health-card"><h4>IVDD (CDDY & CDPA)</h4><p>Intervertebral Disc Disease risk markers. Screening helps minimize the potential for spinal complications in future generations.</p></article>
+      <article class="health-card"><h4>JVC (Hereditary Cataracts)</h4><p>Hereditary cataract screening ensures eye health is maintained across breeding lines.</p></article>
+      <article class="health-card"><h4>HUU (Hyperuricosuria)</h4><p>Screening for urinary stone predisposition. Clear dogs reduce the risk of painful conditions in offspring.</p></article>
+      <article class="health-card"><h4>CMR1 (Multifocal Retinopathy)</h4><p>A genetic eye condition. Clear results ensure puppies are free from this inherited retinal disease.</p></article>
+      <article class="health-card"><h4>DM (Degenerative Myelopathy)</h4><p>A progressive spinal cord disease. DNA screening ensures we never pair two carriers.</p></article>
+    </div>
+  </section>
+
+  <section class="why-hoi section-shell" data-reveal>
+    <p class="section-kicker mono">TESTIMONIALS</p>
+    <h2 class="display" style="font-size:clamp(2rem,3.5vw,3.5rem);letter-spacing:-.08em;margin:0 0 3rem;">Trusted by breeders worldwide.</h2>
+    <div class="testimonials-grid">
+      <article class="testimonial-card"><div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div><blockquote>"The quality of the studs and the level of support throughout the entire process was exceptional. We got exactly the results we were hoping for."</blockquote><cite>— Verified Breeder</cite></article>
+      <article class="testimonial-card"><div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div><blockquote>"Professional from start to finish. The genetic consultation helped us pick the perfect stud for our female. Couldn't be happier with the litter."</blockquote><cite>— Verified Breeder</cite></article>
+      <article class="testimonial-card"><div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div><blockquote>"Shipping was seamless and the specimen quality was excellent. The ongoing support through whelping made all the difference."</blockquote><cite>— Verified Breeder</cite></article>
+    </div>
+  </section>
+
+  <section class="section-shell" data-reveal>
+    <p class="section-kicker mono">PAYMENT & SHIPPING</p>
+    <div class="payment-shipping">
+      <div>
+        <h2 class="display">Flexible payment,<br /><em>worldwide reach.</em></h2>
+        <p>We require a deposit to secure your spot. We accept a wide range of payment options including E-Transfer, Wire Transfers, and major credit cards via Stripe.</p>
+        <p>Every breeding process is unique, which is why we offer flexibility depending on the stud and the unique requirements of your breeding plan.</p>
+      </div>
+      <div>
+        <h2 class="display">Shipped across<br /><em>North America & beyond.</em></h2>
+        <p>We have extensive experience with semen shipping and can coordinate any breeding across the globe. Semen can be preserved and used for up to 10 days from collection. Shipping costs vary by destination — contact us for a quote.</p>
+        <div class="shipping-cities"><span>New York</span><span>Los Angeles</span><span>Miami</span><span>Toronto</span><span>Vancouver</span><span>Chicago</span><span>Houston</span><span>Atlanta</span><span>Phoenix</span><span>Dallas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell" data-reveal>
+    <p class="section-kicker mono">FAQ</p>
+    <h2 class="display" style="font-size:clamp(2rem,3.5vw,3.5rem);letter-spacing:-.08em;margin:0 0 3rem;">Frequently asked questions.</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary>How much is the stud fee and what's included?</summary><p>The stud fee ranges depending on the stud you've chosen. This includes everything required for one insemination — shipping fees, semen extender, collection fees, and form signatures.</p></details>
+      <details class="faq-item"><summary>Do you offer a litter guarantee?</summary><p>Yes, in the event of fewer than two pups, we offer a repeat breeding at the cost of shipping or an insemination fee.</p></details>
+      <details class="faq-item"><summary>When is the right time to breed my French Bulldog?</summary><p>We rely heavily on progesterone testing. It is usually around day 13 from the first sign of heat/bleeding. Your female will go into heat about every 8–12 months, depending on her cycle.</p></details>
+      <details class="faq-item"><summary>Do I need to progesterone test?</summary><p>We heavily suggest it in order to establish the correct day for breeding. We have seen this date identified as early as day 7 and later than day 14. Progesterone testing is required in order for us to provide a litter guarantee.</p></details>
+      <details class="faq-item"><summary>How is semen shipped and how long does it last?</summary><p>It is processed by removing seminal fluid and replacing with semen extender. This preserves the sample for up to 10 days. The sample will slowly degrade over that period so we recommend using it as soon as possible. It is shipped in a chilled container.</p></details>
+      <details class="faq-item"><summary>How much does shipping cost?</summary><p>Shipping costs vary depending on your location and whether you need chilled or frozen semen. Domestic shipments within major metropolitan areas are typically more affordable. Contact us with your location and we'll provide a shipping quote.</p></details>
+      <details class="faq-item"><summary>Do you ship to the U.S. or only internationally?</summary><p>We ship worldwide. In remote areas, sometimes the shipment will be sent to a pickup location. In most cases, it is shipped directly to your requested location overnight.</p></details>
+      <details class="faq-item"><summary>What happens if the shipment is delayed or damaged?</summary><p>In the event the shipment does not arrive viable, in the agreed upon timeline, and fails to produce a pregnancy, we would offer a full refund.</p></details>
+      <details class="faq-item"><summary>Are your studs DNA tested?</summary><p>Yes, we DNA test all of our studs. We make the results available on our detailed stud page. If you require any documentation you can't find, please contact us.</p></details>
+      <details class="faq-item"><summary>What colors can your studs produce?</summary><p>Our studs can produce Pink, Isabella, New Shade, Lilac, Chocolate, Cream, Blue, Platinum, and more. They can also produce pied, tan points, and long hair (fluffy Frenchies). Contact us for litter projections.</p></details>
+      <details class="faq-item"><summary>Is the stud fee refundable if my female doesn't get pregnant?</summary><p>If the semen were to be received and analyzed by a vet and deemed to be non-viable, or a shipment is lost or destroyed, this is the only instance where we would offer a full refund. In most cases, the female is incorrectly timed when a pregnancy fails.</p></details>
+      <details class="faq-item"><summary>What payments do you accept?</summary><p>We accept most major credit cards via Stripe. We also accept E-Transfer and Wire Transfers.</p></details>
+      <details class="faq-item"><summary>What is your deposit policy?</summary><p>Deposits are non-refundable and used to secure your commitment to working with us. The fee covers the costs associated with our mentoring and time spent assisting with your breeding.</p></details>
+    </div>
+  </section>
+
   <section class="dark-band section-shell" data-reveal><p class="section-kicker mono">THE DIFFERENCE</p><h2 class="display">Not a transaction.<br /><em>A breeding advantage.</em></h2></section>
 </PageShell>

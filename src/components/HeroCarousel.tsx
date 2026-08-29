@@ -54,17 +54,18 @@ export default function HeroCarousel({ studs }: HeroCarouselProps) {
         <motion.div className="brand-hero__ghost" key={`${activeStud.slug}-ghost`} initial={shouldReduceMotion ? false : { opacity: 0, filter: 'blur(14px)', y: 24 }} animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }} exit={shouldReduceMotion ? undefined : { opacity: 0, filter: 'blur(14px)', y: -20 }} transition={{ duration: .75, ease: [0.22, 1, 0.36, 1] }} aria-hidden="true">{copy.name}</motion.div>
       </AnimatePresence>
       <AnimatePresence mode="wait" initial={!shouldReduceMotion}>
-        <motion.div className="brand-hero__content" key={`${activeStud.slug}-content`} initial={shouldReduceMotion ? false : { opacity: 0, x: direction * -70 }} animate={{ opacity: 1, x: 0 }} exit={shouldReduceMotion ? undefined : { opacity: 0, x: direction * 70 }} transition={{ duration: .7, delay: .32, ease: [0.22, 1, 0.36, 1] }}>
-          <div className="brand-hero__badge">{copy.title}</div>
-          <p className="brand-hero__description">{copy.description}</p>
-          <div className="brand-hero__actions"><a className="brand-hero__cta" href={`/studs#${activeStud.slug}`}>BOOK NOW <span aria-hidden="true">↗</span></a><a className="brand-hero__buy" href="/contact">BUY NOW <span aria-hidden="true">↗</span></a></div>
-        </motion.div>
-      </AnimatePresence>
-      <AnimatePresence mode="wait" initial={!shouldReduceMotion}>
         <motion.div className="brand-hero__visual" key={`${activeStud.slug}-media`} initial={shouldReduceMotion ? false : { opacity: 0, y: 190, rotate: direction * 8, scale: .8 }} animate={{ opacity: 1, y: 0, rotate: direction * -2, scale: 1 }} exit={shouldReduceMotion ? undefined : { opacity: 0, y: -100, rotate: direction * -8, scale: .9 }} transition={{ type: 'spring', stiffness: 115, damping: 16, mass: 1.05 }}>
           <div className="brand-hero__orbit" aria-hidden="true" />
           <motion.img src={activeStud.image} alt={`${copy.name} French Bulldog`} initial={shouldReduceMotion ? false : { scale: 1.18 }} animate={{ scale: 1 }} transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }} />
           <span className="brand-hero__visual-label mono">EXOTIC / DNA / STRUCTURE</span>
+        </motion.div>
+      </AnimatePresence>
+      <div className="brand-hero__overlay" aria-hidden="true" />
+      <AnimatePresence mode="wait" initial={!shouldReduceMotion}>
+        <motion.div className="brand-hero__content" key={`${activeStud.slug}-content`} initial={shouldReduceMotion ? false : { opacity: 0, x: direction * -70 }} animate={{ opacity: 1, x: 0 }} exit={shouldReduceMotion ? undefined : { opacity: 0, x: direction * 70 }} transition={{ duration: .7, delay: .32, ease: [0.22, 1, 0.36, 1] }}>
+          <div className="brand-hero__badge">{copy.title}</div>
+          <p className="brand-hero__description">{copy.description}</p>
+          <div className="brand-hero__actions"><a className="brand-hero__cta" href={`/studs#${activeStud.slug}`}>BOOK NOW <span aria-hidden="true">↗</span></a><a className="brand-hero__buy" href="/contact">BUY NOW <span aria-hidden="true">↗</span></a></div>
         </motion.div>
       </AnimatePresence>
       <div className="brand-hero__arrows"><button type="button" onClick={() => selectStud((activeIndex - 1 + orderedStuds.length) % orderedStuds.length)} aria-label="Previous stud">↑</button><button type="button" onClick={() => selectStud((activeIndex + 1) % orderedStuds.length)} aria-label="Next stud">↓</button></div>

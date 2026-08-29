@@ -1,13 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from './SiteHeader.astro';
-const { title, current, showHeader = true } = Astro.props;
+const { title, current, showHeader = true, lightHeader = false } = Astro.props;
 ---
 
 <Layout title={title}>
-  {showHeader && <SiteHeader current={current} />}
+  {showHeader && <SiteHeader current={current} light={lightHeader} />}
   <main transition:animate="slide">
     <slot />
   </main>
-  <footer class="site-footer section-shell"><a class="site-footer__brand" href="/" aria-label="HOI STUDS home"><img src="/logo-hoi.webp" alt="HOI STUDS" /></a><span class="mono">ELITE FRENCH BULLDOG GENETICS</span><a href="/contact">START A CONVERSATION ↗</a></footer>
+  <footer class="site-footer">
+    <div>
+      <a class="site-footer__brand" href="/" aria-label="HOI STUDS home"><img src="/logo-hoi.webp" alt="HOI STUDS" /></a>
+      <span>Elite French Bulldog genetics built for structure, color and the next generation.</span>
+      <div class="site-footer__newsletter">
+        <p>Sign up to our Newsletter to be the first to know about new studs and breeding opportunities.</p>
+        <form class="site-footer__newsletter-form" action="#" method="post"><input type="email" placeholder="you@example.com" required /><button type="submit">SUBSCRIBE</button></form>
+      </div>
+    </div>
+    <div class="site-footer__col">
+      <h4>Services</h4>
+      <a href="/studs">Stud Service</a>
+      <a href="/lock-in">Lock-In Program</a>
+      <a href="/services#consultation">Genetic Consultation</a>
+      <a href="/services#shipping">Semen Shipping</a>
+    </div>
+    <div class="site-footer__col">
+      <h4>Company</h4>
+      <a href="/services">About Us</a>
+      <a href="/services#testimonials">Testimonials</a>
+      <a href="/services#faq">FAQ</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="site-footer__col">
+      <h4>Connect</h4>
+      <a href="mailto:hello@hoistuds.com">hello@hoistuds.com</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </footer>
+  <div class="site-footer__bottom">
+    <span>© 2026 HOI STUDS. All rights reserved.</span>
+    <div class="site-footer__socials">
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+    </div>
+  </div>
 </Layout>

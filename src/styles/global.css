@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --ink: #050608;
@@ -9,7 +9,7 @@
   --cream: #d8c2a0;
   --rose: #d98c91;
   --line: rgba(233, 237, 242, 0.16);
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Sora', sans-serif;
   color: var(--chrome);
   background: var(--ink);
   font-synthesis: none;
@@ -45,12 +45,12 @@ button {
 }
 
 .mono {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Sora', sans-serif;
   letter-spacing: .09em;
 }
 
 .display {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Sora', sans-serif;
 }
 
 .site-header {
@@ -101,6 +101,21 @@ button {
 
 .site-header__nav a.is-current {
   color: var(--chrome);
+}
+
+.site-header--light .site-header__nav a,
+.site-header--light .site-header__lock {
+  color: #67717d;
+}
+
+.site-header--light .site-header__nav a:hover,
+.site-header--light .site-header__lock:hover,
+.site-header--light .site-header__nav a.is-current {
+  color: var(--ink);
+}
+
+.site-header--light .mobile-menu summary span {
+  background: var(--ink);
 }
 
 .site-header__actions {
@@ -1002,7 +1017,7 @@ button {
 }
 
 .price {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 1.5rem;
   letter-spacing: -.06em;
   margin-right: 1rem;
@@ -1508,7 +1523,7 @@ button {
 
 .brand-hero__ghost {
   color: rgba(67, 119, 255, .24);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: clamp(7rem, 18vw, 18rem);
   font-weight: 800;
   left: 0;
@@ -1563,7 +1578,7 @@ button {
   background: #ec6a99;
   border-radius: 999px;
   box-shadow: 0 8px 25px rgba(236, 106, 153, .25);
-  font-family: 'DM Mono', monospace;
+  font-family: 'Sora', sans-serif;
   font-size: .68rem;
   letter-spacing: .08em;
   margin-bottom: 1rem;
@@ -1622,6 +1637,19 @@ button {
   top: 5%;
   width: 46%;
   z-index: 2;
+}
+
+.brand-hero__overlay {
+  background: linear-gradient(to top,
+      rgba(2, 3, 10, 0.96) 0%,
+      rgba(2, 3, 10, 0.88) 22%,
+      rgba(2, 3, 10, 0.55) 48%,
+      rgba(2, 3, 10, 0.15) 72%,
+      transparent 100%);
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
 }
 
 .brand-hero__visual img {
@@ -1981,7 +2009,7 @@ button {
 
 .full-slider__ghost {
   color: color-mix(in srgb, var(--panel-accent) 28%, transparent);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: clamp(7rem, 18vw, 18rem);
   font-weight: 800;
   left: 0;
@@ -2102,7 +2130,7 @@ button {
 .full-slider__price {
   background: #ed6b9b;
   border-radius: 999px;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Sora', sans-serif;
   font-size: .66rem;
   letter-spacing: .1em;
   margin-bottom: .7rem;
@@ -2284,5 +2312,561 @@ button {
   .full-slider__decor--two {
     right: 9%;
     top: 30%;
+  }
+}
+
+/* ── Trust Bar ────────────────────────────────────── */
+.trust-bar {
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: 2.5rem 4vw;
+}
+
+.trust-bar__item {
+  align-items: center;
+  display: flex;
+  gap: .7rem;
+}
+
+.trust-bar__icon {
+  color: var(--blue);
+  flex-shrink: 0;
+  stroke-width: 1.5;
+}
+
+.trust-bar__item span:last-child {
+  color: var(--chrome-muted);
+  font-size: .58rem;
+  letter-spacing: .1em;
+}
+
+/* ── Featured Studs Grid ──────────────────────────── */
+.featured-studs {
+  background: var(--ink);
+}
+
+.stud-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  gap: 1.5rem;
+}
+
+.stud-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: border-color .3s ease, transform .3s ease;
+}
+
+.stud-card:hover {
+  border-color: var(--card-accent, var(--blue));
+  transform: translateY(-4px);
+}
+
+.stud-card__image {
+  height: 28rem;
+  overflow: hidden;
+}
+
+.stud-card__image img {
+  filter: saturate(.72) contrast(1.08);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.stud-card__body {
+  padding: 1.5rem;
+}
+
+.stud-card__body .section-kicker {
+  color: var(--chrome-muted);
+  font-size: .55rem;
+  margin: 0 0 .8rem;
+}
+
+.stud-card__body h3 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  letter-spacing: -.08em;
+  line-height: .85;
+  margin: 0;
+}
+
+.stud-card__price {
+  display: block;
+  color: var(--chrome);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: -.05em;
+  margin: 1rem 0 1.2rem;
+}
+
+.stud-card__body .button {
+  width: 100%;
+}
+
+/* ── Why HOI Section ──────────────────────────────── */
+.why-hoi {
+  background: var(--chrome);
+  color: var(--ink);
+}
+
+.why-hoi__grid {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+}
+
+.why-hoi__copy h2 {
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  letter-spacing: -.09em;
+  line-height: .9;
+  margin: 0;
+}
+
+.why-hoi__copy h2 em {
+  color: var(--blue);
+  font-style: normal;
+}
+
+.why-hoi__copy p {
+  color: #67717d;
+  font-size: .95rem;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  max-width: 34rem;
+}
+
+.why-hoi__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.why-hoi__stats article {
+  border: 1px solid rgba(5, 6, 8, .12);
+  padding: 1.5rem;
+}
+
+.why-hoi__stats strong {
+  display: block;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  letter-spacing: -.1em;
+  line-height: .8;
+}
+
+.why-hoi__stats span {
+  color: #67717d;
+  display: block;
+  font-size: .55rem;
+  margin-top: .8rem;
+}
+
+/* ── Team Section ─────────────────────────────────── */
+.team-section {
+  background: #0d1428;
+}
+
+.team-section__copy h2 {
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  letter-spacing: -.09em;
+  line-height: .9;
+  margin: 0;
+}
+
+.team-section__copy h2 em {
+  color: var(--blue);
+  font-style: normal;
+}
+
+.team-section__copy p {
+  color: var(--chrome-muted);
+  font-size: .95rem;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  max-width: 34rem;
+}
+
+/* ── Services Page Extensions ─────────────────────── */
+.how-it-works {
+  background: var(--ink);
+}
+
+.how-it-works__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.how-it-works__step {
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+}
+
+.how-it-works__step .step-number {
+  color: var(--blue);
+  font-family: 'Sora', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -.08em;
+  line-height: .8;
+  margin-bottom: 1.2rem;
+}
+
+.how-it-works__step h3 {
+  font-size: 1.1rem;
+  letter-spacing: -.05em;
+  margin: 0 0 .8rem;
+}
+
+.how-it-works__step p {
+  color: var(--chrome-muted);
+  font-size: .85rem;
+  line-height: 1.7;
+}
+
+/* ── Stud Comparison Table ────────────────────────── */
+.stud-table-wrap {
+  overflow-x: auto;
+}
+
+.stud-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.stud-table th,
+.stud-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 1.2rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.stud-table th {
+  color: var(--chrome-muted);
+  font-family: 'Sora', sans-serif;
+  font-size: .56rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.stud-table td {
+  font-size: .9rem;
+}
+
+.stud-table td:first-child {
+  font-weight: 700;
+}
+
+/* ── Health Screening ─────────────────────────────── */
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.health-card {
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+}
+
+.health-card h4 {
+  font-size: .95rem;
+  letter-spacing: -.04em;
+  margin: 0 0 .5rem;
+}
+
+.health-card p {
+  color: var(--chrome-muted);
+  font-size: .82rem;
+  line-height: 1.7;
+}
+
+/* ── Testimonials ─────────────────────────────────── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--line);
+  padding: 2rem;
+}
+
+.testimonial-card__stars {
+  color: #facc15;
+  font-size: .9rem;
+  letter-spacing: .15em;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card blockquote {
+  color: var(--chrome);
+  font-size: .92rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0 0 1.2rem;
+}
+
+.testimonial-card cite {
+  color: var(--chrome-muted);
+  font-size: .72rem;
+  font-style: normal;
+}
+
+/* ── FAQ ──────────────────────────────────────────── */
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-size: .95rem;
+  font-weight: 600;
+  list-style: none;
+  padding: 1.3rem 0;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  color: var(--blue);
+  content: '+';
+  float: right;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  color: var(--chrome-muted);
+  font-size: .88rem;
+  line-height: 1.8;
+  margin: 0 0 1.3rem;
+}
+
+/* ── Payment & Shipping ───────────────────────────── */
+.payment-shipping {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.payment-shipping h2 {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  letter-spacing: -.08em;
+  line-height: .9;
+  margin: 0;
+}
+
+.payment-shipping h2 em {
+  color: var(--blue);
+  font-style: normal;
+}
+
+.payment-shipping p {
+  color: var(--chrome-muted);
+  font-size: .9rem;
+  line-height: 1.8;
+  margin: 1.2rem 0;
+  max-width: 28rem;
+}
+
+.shipping-cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: 1.5rem;
+}
+
+.shipping-cities span {
+  border: 1px solid var(--line);
+  color: var(--chrome-muted);
+  font-size: .72rem;
+  padding: .5rem .8rem;
+}
+
+/* ── Contact Form Stud Selector ───────────────────── */
+.contact-form .stud-select {
+  grid-column: 1 / -1;
+}
+
+/* ── Footer ───────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  padding: 4rem 4vw 2rem;
+}
+
+.site-footer__brand {
+  display: block;
+  line-height: 0;
+  width: clamp(7rem, 11vw, 10rem);
+}
+
+.site-footer__brand img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.site-footer__brand+span {
+  color: var(--chrome-muted);
+  font-size: .6rem;
+  display: block;
+  margin-top: 1rem;
+  max-width: 18rem;
+}
+
+.site-footer__col h4 {
+  color: var(--chrome);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+}
+
+.site-footer__col a {
+  color: var(--chrome-muted);
+  display: block;
+  font-size: .78rem;
+  line-height: 2.2;
+  transition: color .25s ease;
+}
+
+.site-footer__col a:hover {
+  color: var(--chrome);
+}
+
+.site-footer__newsletter {
+  margin-top: 1.5rem;
+}
+
+.site-footer__newsletter p {
+  color: var(--chrome-muted);
+  font-size: .72rem;
+  line-height: 1.6;
+  margin: 0 0 .8rem;
+}
+
+.site-footer__newsletter-form {
+  display: flex;
+  gap: .5rem;
+}
+
+.site-footer__newsletter-form input {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--chrome);
+  font: inherit;
+  font-size: .78rem;
+  outline: 0;
+  padding: .6rem .8rem;
+  width: 100%;
+}
+
+.site-footer__newsletter-form input:focus {
+  border-color: var(--blue);
+}
+
+.site-footer__newsletter-form button {
+  background: var(--blue);
+  color: #fff;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .6rem 1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-footer__bottom {
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 4vw 2rem;
+}
+
+.site-footer__bottom span {
+  color: var(--chrome-muted);
+  font-size: .62rem;
+}
+
+.site-footer__socials {
+  display: flex;
+  gap: .8rem;
+}
+
+.site-footer__socials a {
+  color: var(--chrome-muted);
+  font-size: .7rem;
+  transition: color .25s ease;
+}
+
+.site-footer__socials a:hover {
+  color: var(--chrome);
+}
+
+@media (max-width: 800px) {
+  .trust-bar {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+
+  .stud-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .why-hoi__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-hoi__stats {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+  }
+
+  .how-it-works__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .health-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-shipping {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

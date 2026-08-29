@@ -1,26 +1,250 @@
 ---
-import PageShell from '../components/PageShell.astro';
-import HeroCarousel from '../components/HeroCarousel';
-import { studs } from '../data/studs';
+import PageShell from "../components/PageShell.astro";
+import HeroCarousel from "../components/HeroCarousel";
+import { studs } from "../data/studs";
 ---
 
 <PageShell title="HOI STUDS — Elite French Bulldog Genetics" current="/">
   <HeroCarousel studs={studs} client:load />
 
+  <section class="trust-bar section-shell" data-reveal>
+    <div class="trust-bar__item">
+      <svg
+        class="trust-bar__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path
+          d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"
+        ></path><path
+          d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"
+        ></path></svg
+      >
+      <span class="mono">DNA HEALTH-TESTED</span>
+    </div>
+    <div class="trust-bar__item">
+      <svg
+        class="trust-bar__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path
+          d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+        ></path><polyline points="14 2 14 8 20 8"></polyline><path
+          d="m9 15 2 2 4-4"></path></svg
+      >
+      <span class="mono">GENETICALLY SCREENED</span>
+    </div>
+    <div class="trust-bar__item">
+      <svg
+        class="trust-bar__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><circle cx="12" cy="12" r="10"></circle><path
+          d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path
+          d="M2 12h20"></path></svg
+      >
+      <span class="mono">SHIPS WORLDWIDE</span>
+    </div>
+    <div class="trust-bar__item">
+      <svg
+        class="trust-bar__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path
+          d="m9 12 2 2 4-4"></path></svg
+      >
+      <span class="mono">HEALTH GUARANTEED</span>
+    </div>
+  </section>
+
   <section class="statement section-shell" data-reveal>
     <p class="section-kicker mono">THE HOI STANDARD</p>
     <h1 class="display">NOT JUST A STUD.<br /><em>A GENETIC ADVANTAGE.</em></h1>
     <p>Every breeding decision shapes the next generation.</p>
-    <div class="principles"><article><span class="mono">STRUCTURE</span><h2 class="display">Built to hold attention.</h2><p>Short backs. Strong bone. Wide chest. Distinctive heads.</p></article><article><span class="mono">GENETICS</span><h2 class="display">Rare, with intention.</h2><p>Pink. Isabella. New Shade. Fluffy. Big Rope.</p></article><article><span class="mono">VISION</span><h2 class="display">A bloodline with direction.</h2><p>Building the next generation of Exotic French Bulldogs.</p></article></div>
+    <div class="principles">
+      <article>
+        <span class="mono">STRUCTURE</span><h2 class="display">
+          Built to hold attention.
+        </h2><p>Short backs. Strong bone. Wide chest. Distinctive heads.</p>
+      </article><article>
+        <span class="mono">GENETICS</span><h2 class="display">
+          Rare, with intention.
+        </h2><p>Pink. Isabella. New Shade. Fluffy. Big Rope.</p>
+      </article><article>
+        <span class="mono">VISION</span><h2 class="display">
+          A bloodline with direction.
+        </h2><p>Building the next generation of Exotic French Bulldogs.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="featured-studs section-shell" data-reveal>
+    <div class="section-heading">
+      <p class="section-kicker mono">THE COLLECTION</p><h2 class="display">
+        MEET THE STUDS
+      </h2><a class="button button--text" href="/studs">VIEW ALL ↗</a>
+    </div>
+    <div class="stud-cards">
+      {
+        studs.map((stud) => (
+          <article class="stud-card" style={`--card-accent: ${stud.accent}`}>
+            <>
+              <div class="stud-card__image">
+                <img src={stud.image} alt={`${stud.name} French Bulldog`} />
+              </div>
+              <div class="stud-card__body">
+                <>
+                  <p class="section-kicker mono">{stud.tags.join(" · ")}</p>
+                  <h3 class="display">{stud.name}</h3>
+                  <span class="stud-card__price">{stud.price}</span>
+                  <a
+                    class="button button--primary button--small"
+                    href="/contact"
+                  >
+                    INQUIRE ↗
+                  </a>
+                </>
+              </div>
+            </>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="why-hoi section-shell" data-reveal>
+    <div class="why-hoi__grid">
+      <div class="why-hoi__copy">
+        <p class="section-kicker mono">WHY HOI STUDS</p>
+        <h2 class="display">
+          Not a transaction.<br /><em>A breeding advantage.</em>
+        </h2>
+        <p>
+          Our French Bulldogs come from DNA health-tested and proven lines.
+          Every stud in our program is bred in-house, with full lineage
+          transparency. We specialize in rare color genetics — Pink, Isabella,
+          New Shade — combined with structural excellence that sets the standard
+          for exotic French Bulldogs.
+        </p>
+        <p>
+          Each stud goes through rigorous health testing including DNA panels,
+          Patellas, Trachea, Heart, and Eyes. We don't just sell semen — we
+          provide genetic consultation, litter projections, and ongoing support
+          through every stage of your breeding program.
+        </p>
+      </div>
+      <div class="why-hoi__stats">
+        <article>
+          <strong class="display">100%</strong><span class="mono"
+            >DNA TESTED STUDS</span
+          >
+        </article>
+        <article>
+          <strong class="display">5+</strong><span class="mono"
+            >RARE COLOR LINES</span
+          >
+        </article>
+        <article>
+          <strong class="display">24/7</strong><span class="mono"
+            >BREEDER SUPPORT</span
+          >
+        </article>
+        <article>
+          <strong class="display">N/A</strong><span class="mono"
+            >SHIPPING COVERAGE</span
+          >
+        </article>
+      </div>
+    </div>
   </section>
 
   <section class="services section-shell" id="services" data-reveal>
-    <div class="section-heading"><p class="section-kicker mono">WHAT WE DO</p><h2 class="display">SERVICES</h2><a class="button button--text" href="/services">VIEW ALL ↗</a></div>
-    <div class="service-grid"><article><span class="mono">01 / SERVICE</span><h3 class="display">STUD SERVICE</h3><p>Elite genetics, available when your female is ready.</p><a href="/studs">EXPLORE ↗</a></article><article><span class="mono">02 / ACCESS</span><h3 class="display">LOCK-IN</h3><p>Secure your breeding opportunity today. Choose your stud when the time is right.</p><a href="/lock-in">RESERVE ↗</a></article><article><span class="mono">03 / GUIDANCE</span><h3 class="display">GENETIC CONSULTATION</h3><p>Not sure which stud is right for your female? Let us find the right match.</p><a href="/contact">BOOK A CALL ↗</a></article><article><span class="mono">04 / REACH</span><h3 class="display">SHIPPING</h3><p>National and international semen shipping.</p><a href="/contact">LEARN MORE ↗</a></article></div>
+    <div class="section-heading">
+      <p class="section-kicker mono">WHAT WE DO</p><h2 class="display">
+        SERVICES
+      </h2><a class="button button--text" href="/services">VIEW ALL ↗</a>
+    </div>
+    <div class="service-grid">
+      <article>
+        <span class="mono">01 / SERVICE</span><h3 class="display">
+          STUD SERVICE
+        </h3><p>Elite genetics, available when your female is ready.</p><a
+          href="/studs">EXPLORE ↗</a
+        >
+      </article><article>
+        <span class="mono">02 / ACCESS</span><h3 class="display">LOCK-IN</h3><p>
+          Secure your breeding opportunity today. Choose your stud when the time
+          is right.
+        </p><a href="/lock-in">RESERVE ↗</a>
+      </article><article>
+        <span class="mono">03 / GUIDANCE</span><h3 class="display">
+          GENETIC CONSULTATION
+        </h3><p>
+          Not sure which stud is right for your female? Let us find the right
+          match.
+        </p><a href="/contact">BOOK A CALL ↗</a>
+      </article><article>
+        <span class="mono">04 / REACH</span><h3 class="display">SHIPPING</h3><p>
+          National and international semen shipping.
+        </p><a href="/contact">LEARN MORE ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="team-section section-shell" data-reveal>
+    <div class="team-section__grid">
+      <div class="team-section__copy">
+        <p class="section-kicker mono">THE TEAM</p>
+        <h2 class="display">Built by breeders,<br /><em>for breeders.</em></h2>
+        <p>
+          HOI STUDS is run by a dedicated team with deep expertise in French
+          Bulldog genetics, reproduction, and health screening. We specialize in
+          color genetics and structural breeding, and we've developed tools that
+          help breeders make smarter pairing decisions.
+        </p>
+        <p>
+          We're here to support you from the first consultation to the moment
+          your litter arrives. Every question answered. Every step guided.
+        </p>
+      </div>
+    </div>
   </section>
 
   <section class="home-feature section-shell" data-reveal>
-    <div><p class="section-kicker mono">START WITH THE RIGHT GENETICS</p><h2 class="display">Your next litter<br /><em>starts here.</em></h2></div>
+    <div>
+      <p class="section-kicker mono">START WITH THE RIGHT GENETICS</p><h2
+        class="display"
+      >
+        Your next litter<br /><em>starts here.</em>
+      </h2>
+    </div>
     <a class="button button--outline" href="/studs">EXPLORE THE STUDS ↗</a>
   </section>
 </PageShell>
