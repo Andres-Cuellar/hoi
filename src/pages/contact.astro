@@ -1,9 +1,48 @@
 ---
-import PageShell from '../components/PageShell.astro';
-import { studs } from '../data/studs';
+import PageShell from "../components/PageShell.astro";
 ---
 
 <PageShell title="Contact — HOI STUDS" current="/contact" lightHeader>
-  <section class="contact-page-hero"><p class="section-kicker mono">START THE CONVERSATION</p><h1 class="display">LET'S BUILD THE<br /><em>NEXT GENERATION.</em></h1><p>Tell us about your female, your breeding goals and the genetics you are looking for.</p></section>
-  <section class="contact-form-shell section-shell" data-reveal><div><p class="section-kicker mono">BOOK A CONSULTATION</p><h2 class="display">Find the right<br />genetic match.</h2><p>Our team will help you understand the options and choose the next step for your program.</p></div><form class="contact-form" action="mailto:hello@hoistuds.com" method="post" enctype="text/plain"><label>Name<input name="name" required /></label><label>Email<input name="email" type="email" required /></label><label>WhatsApp<input name="whatsapp" /></label><label>Female's name<input name="female" /></label><label>Which stud are you interested in?<select name="stud" class="stud-select"><option value="">Not sure yet — please advise</option>{studs.map((s) => <option value={s.slug}>{s.name} — {s.tags.join(', ')}</option>)}</select></label><label>What are you looking for?<select name="interest"><option>Stud Service</option><option>Lock-In</option><option>Genetic Consultation</option><option>Shipping</option></select></label><label>Tell us about your goals<textarea name="message" rows="4"></textarea></label><button class="button button--primary" type="submit">TALK TO OUR TEAM ↗</button></form></section>
+  <section class="contact-page-hero">
+    <p class="section-kicker mono">START THE CONVERSATION</p><h1
+      class="display"
+    >
+      LET'S BUILD THE<br /><em>NEXT GENERATION.</em>
+    </h1><p>
+      Tell us about your female, your breeding goals and the genetics you are
+      looking for.
+    </p>
+  </section>
+  <section class="contact-form-shell section-shell" data-reveal>
+    <div>
+      <p class="section-kicker mono">BOOK A CONSULTATION</p><h2 class="display">
+        Find the right<br />genetic match.
+      </h2><p>
+        Our team will help you understand the options and choose the next step
+        for your program.
+      </p>
+    </div>
+    <div class="contact-iframe">
+      <iframe
+        src="https://shop.hoistuds.com/widget/form/JwRPYpyVkA263XAZME3M"
+        style="width:100%;height:100%;border:none;border-radius:8px"
+        id="inline-JwRPYpyVkA263XAZME3M"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Form 0"
+        data-height="582"
+        data-layout-iframe-id="inline-JwRPYpyVkA263XAZME3M"
+        data-form-id="JwRPYpyVkA263XAZME3M"
+        data-cookie-consent="true"
+        data-cookie-consent-provider="auto"
+        title="Form 0"
+      ></iframe>
+      <script src="https://shop.hoistuds.com/js/form_embed.js"></script>
+    </div>
+  </section>
 </PageShell>
