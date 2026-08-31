@@ -82,6 +82,23 @@ import { studs } from "../data/studs";
       >
       <span class="mono">HEALTH GUARANTEED</span>
     </div>
+    <div class="trust-bar__item">
+      <svg
+        class="trust-bar__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path
+          d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
+      >
+      <span class="mono">LOCK-IN FOR $500</span>
+    </div>
   </section>
 
   <section class="statement section-shell" data-reveal>
@@ -97,9 +114,9 @@ import { studs } from "../data/studs";
         <span class="mono">GENETICS</span><h2 class="display">
           Rare, with intention.
         </h2><p>Pink. Isabella. New Shade. Fluffy. Big Rope.</p>
-      </article><article>
+      </article>      <article>
         <span class="mono">VISION</span><h2 class="display">
-          A bloodline with direction.
+          A direction.
         </h2><p>Building the next generation of Exotic French Bulldogs.</p>
       </article>
     </div>
@@ -124,12 +141,14 @@ import { studs } from "../data/studs";
                   <p class="section-kicker mono">{stud.tags.join(" · ")}</p>
                   <h3 class="display">{stud.name}</h3>
                   <span class="stud-card__price">{stud.price}</span>
-                  <a
-                    class="button button--primary button--small"
-                    href="/contact"
-                  >
-                    INQUIRE ↗
-                  </a>
+                  <div class="stud-card__actions">
+                    <a class="button button--primary button--small" href="#">
+                      LOCK-IN ↗
+                    </a>
+                    <a class="button button--outline button--small" href="#">
+                      BUY NOW ↗
+                    </a>
+                  </div>
                 </>
               </div>
             </>
@@ -177,8 +196,8 @@ import { studs } from "../data/studs";
           >
         </article>
         <article>
-          <strong class="display">N/A</strong><span class="mono"
-            >SHIPPING COVERAGE</span
+          <strong class="display">WORLDWIDE</strong><span class="mono"
+            >SHIPPING</span
           >
         </article>
       </div>

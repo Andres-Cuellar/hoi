@@ -526,7 +526,7 @@ button {
 
 .button--outline {
   border: 1px solid var(--ink);
-  color: var(--ink);
+  color: var(--chrome);
 }
 
 .button--outline:hover {
@@ -572,11 +572,12 @@ button {
   border-top: 1px solid rgba(5, 6, 8, .2);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 0 2rem;
 }
 
 .principles article {
   border-right: 1px solid rgba(5, 6, 8, .2);
-  padding: 1.5rem 2rem 0 0;
+  padding: 1.5rem 0 1.5rem;
 }
 
 .principles article+article {
@@ -584,7 +585,7 @@ button {
 }
 
 .principles article:last-child {
-  border: 0;
+  border-right: 0;
 }
 
 .principles span,
@@ -594,10 +595,11 @@ button {
   line-height: 1.7;
 }
 
-.principles h3 {
-  font-size: 1.7rem;
+.principles h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.7rem);
   letter-spacing: -.06em;
   margin: 2rem 0 .5rem;
+  line-height: 1.15;
 }
 
 .services,
@@ -606,7 +608,6 @@ button {
 }
 
 .section-heading {
-  align-items: end;
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
@@ -1079,9 +1080,9 @@ button {
 
 .lock-page-hero__number {
   color: #fff;
-  font-size: clamp(10rem, 25vw, 25rem);
+  font-size: clamp(10rem, 25vw, 20rem);
   letter-spacing: -.16em;
-  line-height: .65;
+  line-height: .75;
 }
 
 .lock-page-hero__number span {
@@ -1819,6 +1820,17 @@ button {
     margin-top: 1rem;
   }
 
+  .brand-hero__actions {
+    gap: .7rem;
+    margin-top: .5rem;
+  }
+
+  .brand-hero__cta,
+  .brand-hero__buy {
+    font-size: .6rem;
+    padding: .7rem 1rem;
+  }
+
   .brand-hero__arrows {
     bottom: 1.25rem;
     left: 1.25rem;
@@ -1830,9 +1842,7 @@ button {
   }
 
   .brand-hero__selectors {
-    bottom: 1.45rem;
-    gap: .35rem;
-    right: 1.25rem;
+    display: none;
   }
 
   .brand-hero__selector span {
@@ -2830,6 +2840,17 @@ button {
     flex-wrap: wrap;
     gap: 1.2rem;
     justify-content: center;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+    text-align: left;
+  }
+
+  .section-heading .button--text {
+    align-self: flex-start;
   }
 
   .stud-cards {

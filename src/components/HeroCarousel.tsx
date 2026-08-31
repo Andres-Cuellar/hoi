@@ -65,7 +65,7 @@ export default function HeroCarousel({ studs }: HeroCarouselProps) {
         <motion.div className="brand-hero__content" key={`${activeStud.slug}-content`} initial={shouldReduceMotion ? false : { opacity: 0, x: direction * -70 }} animate={{ opacity: 1, x: 0 }} exit={shouldReduceMotion ? undefined : { opacity: 0, x: direction * 70 }} transition={{ duration: .7, delay: .32, ease: [0.22, 1, 0.36, 1] }}>
           <div className="brand-hero__badge">{copy.title}</div>
           <p className="brand-hero__description">{copy.description}</p>
-          <div className="brand-hero__actions"><a className="brand-hero__cta" href={`/studs#${activeStud.slug}`}>BOOK NOW <span aria-hidden="true">↗</span></a><a className="brand-hero__buy" href="/contact">BUY NOW <span aria-hidden="true">↗</span></a></div>
+          <div className="brand-hero__actions"><a className="brand-hero__cta" href="#">LOCK-IN <span aria-hidden="true">↗</span></a><a className="brand-hero__buy" href="#">BUY NOW <span aria-hidden="true">↗</span></a></div>
         </motion.div>
       </AnimatePresence>
       <div className="brand-hero__arrows"><button type="button" onClick={() => selectStud((activeIndex - 1 + orderedStuds.length) % orderedStuds.length)} aria-label="Previous stud">↑</button><button type="button" onClick={() => selectStud((activeIndex + 1) % orderedStuds.length)} aria-label="Next stud">↓</button></div>
